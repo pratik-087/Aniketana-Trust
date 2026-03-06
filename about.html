@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Ambient Floating Orbs -->
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <header class="transparent-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html#home"><img src="logo.jpeg" alt="Aniketana Trust Logo"></a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="programs.html">Our programs</a></li>
+                <li><a href="index.html#support">Support us</a></li>
+                <li><a href="index.html#contact">Contact us</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-actions">
+                <a href="index.html#support" class="donate-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>
+                    Donate
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-subpage" style="background-image: url('teaching.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-headline">About us</h1>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 80px 0;">
+            <div id="about">
+                <div class="vm-cards">
+                    <div class="vm-card">
+                        <h3>Vision</h3>
+                        <p>To create a self-sustaining, empowered community where everyone lives with dignity.</p>
+                    </div>
+                    <div class="vm-card">
+                        <h3>Mission</h3>
+                        <p>To create a self-sustaining, empowered community where everyone lives with dignity.</p>
+                    </div>
+                    <div class="vm-card">
+                        <h3>Objective</h3>
+                        <p>Social Welfare & Development: Providing aid, promoting women empowerment through skill
+                            training, and building community centers.</p>
+                    </div>
+                </div>
+
+                <div class="about-org-box animate-in">
+                    <p class="section-accent">behind the vision</p>
+                    <h2>
+                        Organization Status & <br> Functioning
+                        <svg class="section-swoosh" viewBox="0 0 200 40" preserveAspectRatio="none">
+                            <path d="M0 35 Q 50 5, 100 25 T 200 15" fill="none" class="animated-swoosh" />
+                        </svg>
+                        <br> <br>
+                    </h2>
+                    <p>Aniketana Trust is registered under Indian Trust Act 1882. This has 12A, 80G and registration
+                        with NGO Darpan under NITI Aayog, Government of India. This is registered for the Corporate
+                        Social Responsibility (CSR) programs with the Ministry of Corporate Affairs (MCA), Government of
+                        India.</p>
+                    <p>In order to have the overall management and functioning, the Trust comprises of Board of
+                        Trustees, Directors, General Manager, Program Manager, the Program Coordinators, Finance &
+                        Accounts Executive. They are helped by a group of facilitators based across the state. They set
+                        goals, formulate plans and budgets, integrate the operations and functions, create synergy,
+                        evolve policies and guidelines, review and monitor the organization’s performance, interact and
+                        nurture relationships with internal as well as external stakeholders.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Support Badge -->
+    <a href="index.html#support" class="floating-badge">
+        <div class="badge-content">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+            </svg>
+            <span>Support Us</span>
+        </div>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-top" id="scrollTop">
+        &#8593;
+    </a>
+
+    <script>
+        // Scroll handling: top button & progress bar
+        const scrollBtn = document.getElementById('scrollTop');
+        const progBar = document.getElementById('progressBar');
+
+        if (scrollBtn || progBar) {
+            window.addEventListener('scroll', function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+
+                if (progBar) progBar.style.width = scrolled + "%";
+
+                if (scrollBtn) {
+                    if (winScroll > 300) {
+                        scrollBtn.classList.add('show');
+                    } else {
+                        scrollBtn.classList.remove('show');
+                    }
+                }
+            });
+        }
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, .vm-card, .about-org-box').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

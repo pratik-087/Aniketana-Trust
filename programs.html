@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Ambient Floating Orbs -->
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header class="transparent-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html#home"><img src="logo.jpeg" alt="Aniketana Trust Logo"></a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="programs.html">Our programs</a></li>
+                <li><a href="index.html#support">Support us</a></li>
+                <li><a href="index.html#contact">Contact us</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-actions">
+                <a href="index.html#support" class="donate-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>
+                    Donate
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-subpage" style="background-image: url('skill.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-headline">Our programs</h1>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 80px 0;">
+            <div class="section-header animate-in">
+                <p class="section-accent">how we work</p>
+                <h2>
+                    Our Impact Methodology
+                    <svg class="section-swoosh" viewBox="0 0 200 40" preserveAspectRatio="none">
+                        <path d="M0 35 Q 50 5, 100 25 T 200 15" fill="none" class="animated-swoosh" />
+                    </svg>
+                </h2>
+                <p>A systematic approach to empowering rural communities</p>
+            </div>
+            <div class="process-grid" id="programs">
+                <div class="process-card">
+                    <div class="step-num">01</div>
+                    <h3>Identify</h3>
+                    <p>Unemployed youth through village surveys</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">02</div>
+                    <h3>Assess</h3>
+                    <p>Skills, education & financial background</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">03</div>
+                    <h3>Partner</h3>
+                    <p>Partner with rural schools & colleges</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">04</div>
+                    <h3>Place</h3>
+                    <p>Place candidates in suitable roles</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">05</div>
+                    <h3>Train</h3>
+                    <p>Provide basic training & mentoring</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">06</div>
+                    <h3>Monitor</h3>
+                    <p>Monitor performance & growth</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Support Badge -->
+    <a href="index.html#support" class="floating-badge">
+        <div class="badge-content">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+            </svg>
+            <span>Support Us</span>
+        </div>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-top" id="scrollTop">
+        &#8593;
+    </a>
+
+    <script>
+        const scrollBtn = document.getElementById('scrollTop');
+        const progBar = document.getElementById('progressBar');
+
+        if (scrollBtn || progBar) {
+            window.addEventListener('scroll', function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+
+                if (progBar) progBar.style.width = scrolled + "%";
+
+                if (scrollBtn) {
+                    if (winScroll > 300) {
+                        scrollBtn.classList.add('show');
+                    } else {
+                        scrollBtn.classList.remove('show');
+                    }
+                }
+            });
+        }
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, .process-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
